@@ -1,0 +1,958 @@
+{
+	"manifest_version": 1,
+	"type": "provider",
+	"name": "Électricité de Strasbourg",
+	"description": {
+		"en": "Électricité de Strasbourg (ÉS) green fixed-price contracts: Base, Off-peak hours and Week-end.",
+		"fr": "Les offres vertes à prix fixe d'Électricité de Strasbourg (ÉS) : Base, Heures Creuses, Week-end.",
+		"de": "Ökostrom-Festpreisverträge von Électricité de Strasbourg (ÉS): Base, Nebenzeit, Wochenende.",
+		"es": "Ofertas verdes a precio fijo de Électricité de Strasbourg (ÉS): Base, Horas valle, Week-end."
+	},
+	"version": "0.1.0",
+	"docker_image": "ghcr.io/smuteau/gladys-electricite-de-strasbourg:0.1.0",
+	"gladys_version": ">=5.3.0",
+	"cover_image": "https://raw.githubusercontent.com/smuteau/gladys-electricite-de-strasbourg/main/cover.png",
+	"categories": ["energy"],
+	"keywords": ["es", "strasbourg", "alsace", "offre verte", "prix fixe", "heures creuses", "week-end"],
+	"countries": ["FR"],
+	"transports": ["local"],
+	"config_schema": [
+		{
+			"key": "intro",
+			"type": "section",
+			"label": { "en": "How it works", "fr": "Fonctionnement", "de": "So funktioniert es", "es": "Funcionamiento" },
+			"description": {
+				"en": "Nothing to set here. Open Integrations → Energy Monitoring → Contracts, create a contract and pick an « ÉS » template: green fixed-price offer or its 100% regional variant, with the Base, Off-peak hours or Week-end option. Gladys prices your consumption; this integration provides the templates and the French public holidays. The regulated Tarif Bleu is in the community catalogue of Gladys.",
+				"fr": "Rien à régler ici. Ouvrez Intégrations → Suivi de l'énergie → Contrats, créez un contrat et choisissez un modèle « ÉS » : offre verte à prix fixe ou sa variante 100 % régionale, en option Base, Heures Creuses ou Week-end. Gladys calcule le coût ; cette intégration fournit les modèles et les jours fériés. Le Tarif Bleu réglementé se trouve dans le catalogue communautaire de Gladys.",
+				"de": "Hier gibt es nichts einzustellen. Öffne Integrationen → Energieüberwachung → Verträge, lege einen Vertrag an und wähle eine „ÉS“-Vorlage: Ökostrom-Festpreisangebot oder seine 100 % regionale Variante, mit der Option Base, Nebenzeit oder Week-end. Gladys berechnet die Kosten; diese Integration liefert die Vorlagen und die Feiertage. Der regulierte Tarif Bleu steht im Community-Katalog von Gladys.",
+				"es": "Nada que configurar aquí. Abra Integraciones → Supervisión de energía → Contratos, cree un contrato y elija una plantilla «ÉS»: oferta verde a precio fijo o su variante 100 % regional, con la opción Base, Horas valle o Week-end. Gladys calcula el coste; esta integración aporta las plantillas y los festivos. El Tarif Bleu regulado está en el catálogo comunitario de Gladys."
+			},
+			"links": [
+				{
+					"url": "https://github.com/smuteau/gladys-electricite-de-strasbourg#readme",
+					"label": { "en": "Documentation", "fr": "Documentation", "de": "Dokumentation", "es": "Documentación" }
+				},
+				{
+					"url": "https://particuliers.es.fr/electricite-gaz/electricite/choisir-la-bonne-offre-delectricite",
+					"label": {
+						"en": "ÉS electricity offers",
+						"fr": "Offres d'électricité ÉS",
+						"de": "Stromangebote von ÉS",
+						"es": "Ofertas de electricidad ÉS"
+					}
+				}
+			]
+		}
+	],
+	"energy_contracts": {
+		"templates": [
+			{
+				"key": "es-verte-prix-fixe-base",
+				"name": {
+					"en": "ÉS Green fixed price 1 year – Base",
+					"fr": "ÉS Offre verte prix fixe 1 an – Base",
+					"de": "ÉS Ökostrom Festpreis 1 Jahr – Base",
+					"es": "ÉS Verde precio fijo 1 año – Base"
+				},
+				"description": {
+					"en": "One kWh price at any time. ÉS market offer: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
+					"fr": "Un seul prix du kWh à toute heure. Offre de marché ÉS : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
+					"de": "Ein kWh-Preis zu jeder Zeit. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"es": "Un único precio del kWh a cualquier hora. Oferta de mercado de ÉS: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
+				},
+				"country": "FR",
+				"currency": "EUR",
+				"timezone": "Europe/Paris",
+				"pricing_mode": "rules",
+				"version": "2026-11-01",
+				"inputs": [
+					{
+						"key": "price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": { "en": "kWh price", "fr": "Prix du kWh", "de": "kWh-Preis", "es": "Precio del kWh" },
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.33164. For 9 to 36 kVA: 0.32906.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,33164. De 9 à 36 kVA : 0,32906.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,33164. Für 9 bis 36 kVA: 0,32906.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,33164. De 9 a 36 kVA: 0,32906."
+						},
+						"default": 0.33164,
+						"required": true
+					},
+					{
+						"key": "subscription",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "Monthly subscription (by subscribed power)",
+							"fr": "Abonnement mensuel (selon la puissance)",
+							"de": "Monatliche Grundgebühr (nach Anschlussleistung)",
+							"es": "Abono mensual (según la potencia contratada)"
+						},
+						"description": {
+							"en": "Pre-filled for 6 kVA. ÉS grid of 2026-11-01 in EUR/month including taxes: 3 kVA: 12.18 · 6: 15.95 · 9: 20.02 · 12: 23.94 · 15: 27.62 · 18: 31.41 · 24: 39.49 · 30: 46.92 · 36: 54.41.",
+							"fr": "Pré-rempli pour 6 kVA. Grille ÉS du 01/11/2026 en €/mois TTC : 3 kVA: 12,18 · 6: 15,95 · 9: 20,02 · 12: 23,94 · 15: 27,62 · 18: 31,41 · 24: 39,49 · 30: 46,92 · 36: 54,41.",
+							"de": "Vorbelegt für 6 kVA. ÉS-Tabelle vom 01/11/2026 in €/Monat brutto: 3 kVA: 12,18 · 6: 15,95 · 9: 20,02 · 12: 23,94 · 15: 27,62 · 18: 31,41 · 24: 39,49 · 30: 46,92 · 36: 54,41.",
+							"es": "Prerrellenado para 6 kVA. Tabla ÉS del 01/11/2026 en €/mes con impuestos: 3 kVA: 12,18 · 6: 15,95 · 9: 20,02 · 12: 23,94 · 15: 27,62 · 18: 31,41 · 24: 39,49 · 30: 46,92 · 36: 54,41."
+						},
+						"default": 15.95,
+						"required": true
+					}
+				],
+				"tariff": {
+					"tariff_version": 1,
+					"components": [
+						{ "key": "energy", "kind": "consumption", "rules": [], "fallback": { "label": "Base", "price": "{{input:price}}" } },
+						{ "key": "subscription", "kind": "fixed", "amount": "{{input:subscription}}", "per": "month" }
+					]
+				}
+			},
+			{
+				"key": "es-verte-prix-fixe-heures-creuses",
+				"name": {
+					"en": "ÉS Green fixed price 1 year – Off-peak hours",
+					"fr": "ÉS Offre verte prix fixe 1 an – Heures Creuses",
+					"de": "ÉS Ökostrom Festpreis 1 Jahr – Nebenzeit",
+					"es": "ÉS Verde precio fijo 1 año – Horas valle"
+				},
+				"description": {
+					"en": "Reduced kWh price during the 8 off-peak hours of your meter, every day. ÉS market offer: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
+					"fr": "Prix du kWh réduit pendant les 8 heures creuses de votre compteur, tous les jours. Offre de marché ÉS : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
+					"de": "Günstigerer kWh-Preis während der 8 Nebenzeitstunden deines Zählers, jeden Tag. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"es": "Precio del kWh reducido durante las 8 horas valle de su contador, todos los días. Oferta de mercado de ÉS: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
+				},
+				"country": "FR",
+				"currency": "EUR",
+				"timezone": "Europe/Paris",
+				"pricing_mode": "rules",
+				"version": "2026-11-01",
+				"inputs": [
+					{
+						"key": "peak_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Peak hours kWh price",
+							"fr": "Prix du kWh en heures pleines",
+							"de": "kWh-Preis Hauptzeit",
+							"es": "Precio del kWh en horas punta"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.35512.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,35512.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35512.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,35512."
+						},
+						"default": 0.35512,
+						"required": true
+					},
+					{
+						"key": "off_peak_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Off-peak hours kWh price",
+							"fr": "Prix du kWh en heures creuses",
+							"de": "kWh-Preis Nebenzeit",
+							"es": "Precio del kWh en horas valle"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.26341.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,26341.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,26341.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,26341."
+						},
+						"default": 0.26341,
+						"required": true
+					},
+					{
+						"key": "off_peak_slots",
+						"type": "time_intervals",
+						"label": {
+							"en": "Off-peak hours of your meter",
+							"fr": "Heures creuses de votre compteur",
+							"de": "Nebenzeiten deines Zählers",
+							"es": "Horas valle de su contador"
+						},
+						"description": {
+							"en": "Set by Strasbourg Électricité Réseaux, 8 hours a day: see your bill, under \"option tarifaire\".",
+							"fr": "Fixées par Strasbourg Électricité Réseaux, 8 heures par jour : voir votre facture, rubrique « option tarifaire ».",
+							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe deine Rechnung unter „option tarifaire“.",
+							"es": "Fijadas por Strasbourg Électricité Réseaux, 8 horas al día: véase su factura, apartado «option tarifaire»."
+						},
+						"default": [["22:00", "06:00"]],
+						"required": true
+					},
+					{
+						"key": "subscription",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "Monthly subscription (by subscribed power)",
+							"fr": "Abonnement mensuel (selon la puissance)",
+							"de": "Monatliche Grundgebühr (nach Anschlussleistung)",
+							"es": "Abono mensual (según la potencia contratada)"
+						},
+						"description": {
+							"en": "Pre-filled for 6 kVA. ÉS grid of 2026-11-01 in EUR/month including taxes: 6 kVA: 16.18 · 9: 20.35 · 12: 24.39 · 15: 28.18 · 18: 32.08 · 24: 40.39 · 30: 48.04 · 36: 55.76.",
+							"fr": "Pré-rempli pour 6 kVA. Grille ÉS du 01/11/2026 en €/mois TTC : 6 kVA: 16,18 · 9: 20,35 · 12: 24,39 · 15: 28,18 · 18: 32,08 · 24: 40,39 · 30: 48,04 · 36: 55,76.",
+							"de": "Vorbelegt für 6 kVA. ÉS-Tabelle vom 01/11/2026 in €/Monat brutto: 6 kVA: 16,18 · 9: 20,35 · 12: 24,39 · 15: 28,18 · 18: 32,08 · 24: 40,39 · 30: 48,04 · 36: 55,76.",
+							"es": "Prerrellenado para 6 kVA. Tabla ÉS del 01/11/2026 en €/mes con impuestos: 6 kVA: 16,18 · 9: 20,35 · 12: 24,39 · 15: 28,18 · 18: 32,08 · 24: 40,39 · 30: 48,04 · 36: 55,76."
+						},
+						"default": 16.18,
+						"required": true
+					}
+				],
+				"tariff": {
+					"tariff_version": 1,
+					"components": [
+						{
+							"key": "energy",
+							"kind": "consumption",
+							"rules": [{ "label": "Heures creuses", "when": { "time": "{{input:off_peak_slots}}" }, "price": "{{input:off_peak_price}}" }],
+							"fallback": { "label": "Heures pleines", "price": "{{input:peak_price}}" }
+						},
+						{ "key": "subscription", "kind": "fixed", "amount": "{{input:subscription}}", "per": "month" }
+					]
+				}
+			},
+			{
+				"key": "es-verte-prix-fixe-week-end",
+				"name": {
+					"en": "ÉS Green fixed price 1 year – Weekend",
+					"fr": "ÉS Offre verte prix fixe 1 an – Week-end",
+					"de": "ÉS Ökostrom Festpreis 1 Jahr – Wochenende",
+					"es": "ÉS Verde precio fijo 1 año – Fin de semana"
+				},
+				"description": {
+					"en": "Reduced kWh price all weekend and on national public holidays (Good Friday and 26 December are ordinary days). Linky meter required. ÉS market offer: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
+					"fr": "Prix du kWh réduit tout le week-end et les jours fériés nationaux (le Vendredi saint et le 26 décembre sont des jours ordinaires). Compteur Linky requis. Offre de marché ÉS : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
+					"de": "Günstigerer kWh-Preis am ganzen Wochenende und an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage). Linky-Zähler erforderlich. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"es": "Precio del kWh reducido todo el fin de semana y los festivos nacionales (el Viernes Santo y el 26 de diciembre son días normales). Requiere contador Linky. Oferta de mercado de ÉS: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
+				},
+				"country": "FR",
+				"currency": "EUR",
+				"timezone": "Europe/Paris",
+				"pricing_mode": "rules",
+				"version": "2026-11-01",
+				"calendars": ["holidays-fr"],
+				"inputs": [
+					{
+						"key": "weekday_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Weekday kWh price",
+							"fr": "Prix du kWh en semaine",
+							"de": "kWh-Preis werktags",
+							"es": "Precio del kWh entre semana"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.34286.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,34286.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,34286.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,34286."
+						},
+						"default": 0.34286,
+						"required": true
+					},
+					{
+						"key": "weekend_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Weekend and public holiday kWh price",
+							"fr": "Prix du kWh le week-end et les jours fériés",
+							"de": "kWh-Preis Wochenende und Feiertage",
+							"es": "Precio del kWh fines de semana y festivos"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25103.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25103.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25103.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25103."
+						},
+						"default": 0.25103,
+						"required": true
+					},
+					{
+						"key": "subscription",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "Monthly subscription (by subscribed power)",
+							"fr": "Abonnement mensuel (selon la puissance)",
+							"de": "Monatliche Grundgebühr (nach Anschlussleistung)",
+							"es": "Abono mensual (según la potencia contratada)"
+						},
+						"description": {
+							"en": "Pre-filled for 6 kVA. ÉS grid of 2026-11-01 in EUR/month including taxes: 3 kVA: 12.13 · 6: 15.86 · 9: 19.88 · 12: 23.76 · 15: 27.40 · 18: 31.14 · 24: 39.14 · 30: 46.47 · 36: 53.88.",
+							"fr": "Pré-rempli pour 6 kVA. Grille ÉS du 01/11/2026 en €/mois TTC : 3 kVA: 12,13 · 6: 15,86 · 9: 19,88 · 12: 23,76 · 15: 27,40 · 18: 31,14 · 24: 39,14 · 30: 46,47 · 36: 53,88.",
+							"de": "Vorbelegt für 6 kVA. ÉS-Tabelle vom 01/11/2026 in €/Monat brutto: 3 kVA: 12,13 · 6: 15,86 · 9: 19,88 · 12: 23,76 · 15: 27,40 · 18: 31,14 · 24: 39,14 · 30: 46,47 · 36: 53,88.",
+							"es": "Prerrellenado para 6 kVA. Tabla ÉS del 01/11/2026 en €/mes con impuestos: 3 kVA: 12,13 · 6: 15,86 · 9: 19,88 · 12: 23,76 · 15: 27,40 · 18: 31,14 · 24: 39,14 · 30: 46,47 · 36: 53,88."
+						},
+						"default": 15.86,
+						"required": true
+					}
+				],
+				"tariff": {
+					"tariff_version": 1,
+					"calendars": ["holidays-fr"],
+					"components": [
+						{
+							"key": "energy",
+							"kind": "consumption",
+							"rules": [
+								{ "label": "Jour férié", "when": { "calendar": { "holidays-fr": "holiday" } }, "price": "{{input:weekend_price}}" },
+								{ "label": "Week-end", "when": { "weekdays": ["sat", "sun"] }, "price": "{{input:weekend_price}}" }
+							],
+							"fallback": { "label": "Semaine", "price": "{{input:weekday_price}}" }
+						},
+						{ "key": "subscription", "kind": "fixed", "amount": "{{input:subscription}}", "per": "month" }
+					]
+				}
+			},
+			{
+				"key": "es-verte-prix-fixe-week-end-heures-creuses",
+				"name": {
+					"en": "ÉS Green fixed price 1 year – Weekend + Off-peak hours",
+					"fr": "ÉS Offre verte prix fixe 1 an – Week-end + Heures Creuses",
+					"de": "ÉS Ökostrom Festpreis 1 Jahr – Wochenende + Nebenzeit",
+					"es": "ÉS Verde precio fijo 1 año – Fin de semana + Horas valle"
+				},
+				"description": {
+					"en": "Reduced kWh price all weekend, on national public holidays (Good Friday and 26 December are ordinary days) and during the off-peak hours of your meter on weekdays. Linky meter required. ÉS market offer: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
+					"fr": "Prix du kWh réduit tout le week-end, les jours fériés nationaux (le Vendredi saint et le 26 décembre sont des jours ordinaires) et pendant les heures creuses de votre compteur en semaine. Compteur Linky requis. Offre de marché ÉS : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
+					"de": "Günstigerer kWh-Preis am ganzen Wochenende, an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage) und werktags während der Nebenzeit deines Zählers. Linky-Zähler erforderlich. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"es": "Precio del kWh reducido todo el fin de semana, los festivos nacionales (el Viernes Santo y el 26 de diciembre son días normales) y durante las horas valle de su contador entre semana. Requiere contador Linky. Oferta de mercado de ÉS: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
+				},
+				"country": "FR",
+				"currency": "EUR",
+				"timezone": "Europe/Paris",
+				"pricing_mode": "rules",
+				"version": "2026-11-01",
+				"calendars": ["holidays-fr"],
+				"inputs": [
+					{
+						"key": "weekday_peak_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Weekday peak hours kWh price",
+							"fr": "Prix du kWh en semaine, heures pleines",
+							"de": "kWh-Preis werktags, Hauptzeit",
+							"es": "Precio del kWh entre semana, horas punta"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.35558.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,35558.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35558.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,35558."
+						},
+						"default": 0.35558,
+						"required": true
+					},
+					{
+						"key": "weekday_off_peak_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Weekday off-peak hours kWh price",
+							"fr": "Prix du kWh en semaine, heures creuses",
+							"de": "kWh-Preis werktags, Nebenzeit",
+							"es": "Precio del kWh entre semana, horas valle"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25993.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25993.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25993."
+						},
+						"default": 0.25993,
+						"required": true
+					},
+					{
+						"key": "weekend_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Weekend and public holiday kWh price",
+							"fr": "Prix du kWh le week-end et les jours fériés",
+							"de": "kWh-Preis Wochenende und Feiertage",
+							"es": "Precio del kWh fines de semana y festivos"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25993.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25993.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25993."
+						},
+						"default": 0.25993,
+						"required": true
+					},
+					{
+						"key": "off_peak_slots",
+						"type": "time_intervals",
+						"label": {
+							"en": "Off-peak hours of your meter",
+							"fr": "Heures creuses de votre compteur",
+							"de": "Nebenzeiten deines Zählers",
+							"es": "Horas valle de su contador"
+						},
+						"description": {
+							"en": "Set by Strasbourg Électricité Réseaux, 8 hours a day: see your bill, under \"option tarifaire\".",
+							"fr": "Fixées par Strasbourg Électricité Réseaux, 8 heures par jour : voir votre facture, rubrique « option tarifaire ».",
+							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe deine Rechnung unter „option tarifaire“.",
+							"es": "Fijadas por Strasbourg Électricité Réseaux, 8 horas al día: véase su factura, apartado «option tarifaire»."
+						},
+						"default": [["22:00", "06:00"]],
+						"required": true
+					},
+					{
+						"key": "subscription",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "Monthly subscription (by subscribed power)",
+							"fr": "Abonnement mensuel (selon la puissance)",
+							"de": "Monatliche Grundgebühr (nach Anschlussleistung)",
+							"es": "Abono mensual (según la potencia contratada)"
+						},
+						"description": {
+							"en": "Pre-filled for 6 kVA. ÉS grid of 2026-11-01 in EUR/month including taxes: 6 kVA: 16.05 · 9: 20.16 · 12: 24.13 · 15: 27.86 · 18: 31.70 · 24: 39.88 · 30: 47.40 · 36: 54.99.",
+							"fr": "Pré-rempli pour 6 kVA. Grille ÉS du 01/11/2026 en €/mois TTC : 6 kVA: 16,05 · 9: 20,16 · 12: 24,13 · 15: 27,86 · 18: 31,70 · 24: 39,88 · 30: 47,40 · 36: 54,99.",
+							"de": "Vorbelegt für 6 kVA. ÉS-Tabelle vom 01/11/2026 in €/Monat brutto: 6 kVA: 16,05 · 9: 20,16 · 12: 24,13 · 15: 27,86 · 18: 31,70 · 24: 39,88 · 30: 47,40 · 36: 54,99.",
+							"es": "Prerrellenado para 6 kVA. Tabla ÉS del 01/11/2026 en €/mes con impuestos: 6 kVA: 16,05 · 9: 20,16 · 12: 24,13 · 15: 27,86 · 18: 31,70 · 24: 39,88 · 30: 47,40 · 36: 54,99."
+						},
+						"default": 16.05,
+						"required": true
+					}
+				],
+				"tariff": {
+					"tariff_version": 1,
+					"calendars": ["holidays-fr"],
+					"components": [
+						{
+							"key": "energy",
+							"kind": "consumption",
+							"rules": [
+								{ "label": "Jour férié", "when": { "calendar": { "holidays-fr": "holiday" } }, "price": "{{input:weekend_price}}" },
+								{ "label": "Week-end", "when": { "weekdays": ["sat", "sun"] }, "price": "{{input:weekend_price}}" },
+								{ "label": "Heures creuses", "when": { "time": "{{input:off_peak_slots}}" }, "price": "{{input:weekday_off_peak_price}}" }
+							],
+							"fallback": { "label": "Heures pleines", "price": "{{input:weekday_peak_price}}" }
+						},
+						{ "key": "subscription", "kind": "fixed", "amount": "{{input:subscription}}", "per": "month" }
+					]
+				}
+			},
+			{
+				"key": "es-verte-regionale-base",
+				"name": {
+					"en": "ÉS 100% regional green 1 year – Base",
+					"fr": "ÉS Offre verte 100 % régionale 1 an – Base",
+					"de": "ÉS Ökostrom 100 % regional 1 Jahr – Base",
+					"es": "ÉS Verde 100 % regional 1 año – Base"
+				},
+				"description": {
+					"en": "One kWh price at any time. ÉS market offer with electricity produced in the Grand Est region: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
+					"fr": "Un seul prix du kWh à toute heure. Offre de marché ÉS avec de l'électricité produite dans le Grand Est : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
+					"de": "Ein kWh-Preis zu jeder Zeit. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"es": "Un único precio del kWh a cualquier hora. Oferta de mercado de ÉS con electricidad producida en la región Grand Est: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
+				},
+				"country": "FR",
+				"currency": "EUR",
+				"timezone": "Europe/Paris",
+				"pricing_mode": "rules",
+				"version": "2026-11-01",
+				"inputs": [
+					{
+						"key": "price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": { "en": "kWh price", "fr": "Prix du kWh", "de": "kWh-Preis", "es": "Precio del kWh" },
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.33164. For 9 to 36 kVA: 0.32906.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,33164. De 9 à 36 kVA : 0,32906.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,33164. Für 9 bis 36 kVA: 0,32906.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,33164. De 9 a 36 kVA: 0,32906."
+						},
+						"default": 0.33164,
+						"required": true
+					},
+					{
+						"key": "subscription",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "Monthly subscription (by subscribed power)",
+							"fr": "Abonnement mensuel (selon la puissance)",
+							"de": "Monatliche Grundgebühr (nach Anschlussleistung)",
+							"es": "Abono mensual (según la potencia contratada)"
+						},
+						"description": {
+							"en": "Pre-filled for 6 kVA. ÉS grid of 2026-11-01 in EUR/month including taxes: 3 kVA: 12.18 · 6: 15.95 · 9: 20.02 · 12: 23.94 · 15: 27.62 · 18: 31.41 · 24: 39.49 · 30: 46.92 · 36: 54.41.",
+							"fr": "Pré-rempli pour 6 kVA. Grille ÉS du 01/11/2026 en €/mois TTC : 3 kVA: 12,18 · 6: 15,95 · 9: 20,02 · 12: 23,94 · 15: 27,62 · 18: 31,41 · 24: 39,49 · 30: 46,92 · 36: 54,41.",
+							"de": "Vorbelegt für 6 kVA. ÉS-Tabelle vom 01/11/2026 in €/Monat brutto: 3 kVA: 12,18 · 6: 15,95 · 9: 20,02 · 12: 23,94 · 15: 27,62 · 18: 31,41 · 24: 39,49 · 30: 46,92 · 36: 54,41.",
+							"es": "Prerrellenado para 6 kVA. Tabla ÉS del 01/11/2026 en €/mes con impuestos: 3 kVA: 12,18 · 6: 15,95 · 9: 20,02 · 12: 23,94 · 15: 27,62 · 18: 31,41 · 24: 39,49 · 30: 46,92 · 36: 54,41."
+						},
+						"default": 15.95,
+						"required": true
+					},
+					{
+						"key": "regional_option",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "100% regional green electricity option",
+							"fr": "Option Électricité verte 100 % régionale",
+							"de": "Option Ökostrom 100 % regional",
+							"es": "Opción electricidad verde 100 % regional"
+						},
+						"description": {
+							"en": "Monthly amount including taxes added to the subscription. ÉS grid of 2026-11-01: 2.27.",
+							"fr": "Montant mensuel TTC ajouté à l'abonnement. Grille ÉS du 01/11/2026 : 2,27.",
+							"de": "Monatlicher Bruttobetrag zusätzlich zur Grundgebühr. ÉS-Tabelle vom 01/11/2026: 2,27.",
+							"es": "Importe mensual con impuestos añadido al abono. Tabla ÉS del 01/11/2026: 2,27."
+						},
+						"default": 2.27,
+						"required": true
+					}
+				],
+				"tariff": {
+					"tariff_version": 1,
+					"components": [
+						{ "key": "energy", "kind": "consumption", "rules": [], "fallback": { "label": "Base", "price": "{{input:price}}" } },
+						{ "key": "subscription", "kind": "fixed", "amount": "{{input:subscription}}", "per": "month" },
+						{
+							"key": "regional_option",
+							"kind": "fixed",
+							"label": "Option Électricité verte 100 % régionale",
+							"amount": "{{input:regional_option}}",
+							"per": "month"
+						}
+					]
+				}
+			},
+			{
+				"key": "es-verte-regionale-heures-creuses",
+				"name": {
+					"en": "ÉS 100% regional green 1 year – Off-peak hours",
+					"fr": "ÉS Offre verte 100 % régionale 1 an – Heures Creuses",
+					"de": "ÉS Ökostrom 100 % regional 1 Jahr – Nebenzeit",
+					"es": "ÉS Verde 100 % regional 1 año – Horas valle"
+				},
+				"description": {
+					"en": "Reduced kWh price during the 8 off-peak hours of your meter, every day. ÉS market offer with electricity produced in the Grand Est region: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
+					"fr": "Prix du kWh réduit pendant les 8 heures creuses de votre compteur, tous les jours. Offre de marché ÉS avec de l'électricité produite dans le Grand Est : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
+					"de": "Günstigerer kWh-Preis während der 8 Nebenzeitstunden deines Zählers, jeden Tag. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"es": "Precio del kWh reducido durante las 8 horas valle de su contador, todos los días. Oferta de mercado de ÉS con electricidad producida en la región Grand Est: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
+				},
+				"country": "FR",
+				"currency": "EUR",
+				"timezone": "Europe/Paris",
+				"pricing_mode": "rules",
+				"version": "2026-11-01",
+				"inputs": [
+					{
+						"key": "peak_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Peak hours kWh price",
+							"fr": "Prix du kWh en heures pleines",
+							"de": "kWh-Preis Hauptzeit",
+							"es": "Precio del kWh en horas punta"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.35512.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,35512.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35512.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,35512."
+						},
+						"default": 0.35512,
+						"required": true
+					},
+					{
+						"key": "off_peak_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Off-peak hours kWh price",
+							"fr": "Prix du kWh en heures creuses",
+							"de": "kWh-Preis Nebenzeit",
+							"es": "Precio del kWh en horas valle"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.26341.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,26341.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,26341.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,26341."
+						},
+						"default": 0.26341,
+						"required": true
+					},
+					{
+						"key": "off_peak_slots",
+						"type": "time_intervals",
+						"label": {
+							"en": "Off-peak hours of your meter",
+							"fr": "Heures creuses de votre compteur",
+							"de": "Nebenzeiten deines Zählers",
+							"es": "Horas valle de su contador"
+						},
+						"description": {
+							"en": "Set by Strasbourg Électricité Réseaux, 8 hours a day: see your bill, under \"option tarifaire\".",
+							"fr": "Fixées par Strasbourg Électricité Réseaux, 8 heures par jour : voir votre facture, rubrique « option tarifaire ».",
+							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe deine Rechnung unter „option tarifaire“.",
+							"es": "Fijadas por Strasbourg Électricité Réseaux, 8 horas al día: véase su factura, apartado «option tarifaire»."
+						},
+						"default": [["22:00", "06:00"]],
+						"required": true
+					},
+					{
+						"key": "subscription",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "Monthly subscription (by subscribed power)",
+							"fr": "Abonnement mensuel (selon la puissance)",
+							"de": "Monatliche Grundgebühr (nach Anschlussleistung)",
+							"es": "Abono mensual (según la potencia contratada)"
+						},
+						"description": {
+							"en": "Pre-filled for 6 kVA. ÉS grid of 2026-11-01 in EUR/month including taxes: 6 kVA: 16.18 · 9: 20.35 · 12: 24.39 · 15: 28.18 · 18: 32.08 · 24: 40.39 · 30: 48.04 · 36: 55.76.",
+							"fr": "Pré-rempli pour 6 kVA. Grille ÉS du 01/11/2026 en €/mois TTC : 6 kVA: 16,18 · 9: 20,35 · 12: 24,39 · 15: 28,18 · 18: 32,08 · 24: 40,39 · 30: 48,04 · 36: 55,76.",
+							"de": "Vorbelegt für 6 kVA. ÉS-Tabelle vom 01/11/2026 in €/Monat brutto: 6 kVA: 16,18 · 9: 20,35 · 12: 24,39 · 15: 28,18 · 18: 32,08 · 24: 40,39 · 30: 48,04 · 36: 55,76.",
+							"es": "Prerrellenado para 6 kVA. Tabla ÉS del 01/11/2026 en €/mes con impuestos: 6 kVA: 16,18 · 9: 20,35 · 12: 24,39 · 15: 28,18 · 18: 32,08 · 24: 40,39 · 30: 48,04 · 36: 55,76."
+						},
+						"default": 16.18,
+						"required": true
+					},
+					{
+						"key": "regional_option",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "100% regional green electricity option",
+							"fr": "Option Électricité verte 100 % régionale",
+							"de": "Option Ökostrom 100 % regional",
+							"es": "Opción electricidad verde 100 % regional"
+						},
+						"description": {
+							"en": "Monthly amount including taxes added to the subscription. ÉS grid of 2026-11-01: 2.27.",
+							"fr": "Montant mensuel TTC ajouté à l'abonnement. Grille ÉS du 01/11/2026 : 2,27.",
+							"de": "Monatlicher Bruttobetrag zusätzlich zur Grundgebühr. ÉS-Tabelle vom 01/11/2026: 2,27.",
+							"es": "Importe mensual con impuestos añadido al abono. Tabla ÉS del 01/11/2026: 2,27."
+						},
+						"default": 2.27,
+						"required": true
+					}
+				],
+				"tariff": {
+					"tariff_version": 1,
+					"components": [
+						{
+							"key": "energy",
+							"kind": "consumption",
+							"rules": [{ "label": "Heures creuses", "when": { "time": "{{input:off_peak_slots}}" }, "price": "{{input:off_peak_price}}" }],
+							"fallback": { "label": "Heures pleines", "price": "{{input:peak_price}}" }
+						},
+						{ "key": "subscription", "kind": "fixed", "amount": "{{input:subscription}}", "per": "month" },
+						{
+							"key": "regional_option",
+							"kind": "fixed",
+							"label": "Option Électricité verte 100 % régionale",
+							"amount": "{{input:regional_option}}",
+							"per": "month"
+						}
+					]
+				}
+			},
+			{
+				"key": "es-verte-regionale-week-end",
+				"name": {
+					"en": "ÉS 100% regional green 1 year – Weekend",
+					"fr": "ÉS Offre verte 100 % régionale 1 an – Week-end",
+					"de": "ÉS Ökostrom 100 % regional 1 Jahr – Wochenende",
+					"es": "ÉS Verde 100 % regional 1 año – Fin de semana"
+				},
+				"description": {
+					"en": "Reduced kWh price all weekend and on national public holidays (Good Friday and 26 December are ordinary days). Linky meter required. ÉS market offer with electricity produced in the Grand Est region: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
+					"fr": "Prix du kWh réduit tout le week-end et les jours fériés nationaux (le Vendredi saint et le 26 décembre sont des jours ordinaires). Compteur Linky requis. Offre de marché ÉS avec de l'électricité produite dans le Grand Est : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
+					"de": "Günstigerer kWh-Preis am ganzen Wochenende und an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage). Linky-Zähler erforderlich. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"es": "Precio del kWh reducido todo el fin de semana y los festivos nacionales (el Viernes Santo y el 26 de diciembre son días normales). Requiere contador Linky. Oferta de mercado de ÉS con electricidad producida en la región Grand Est: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
+				},
+				"country": "FR",
+				"currency": "EUR",
+				"timezone": "Europe/Paris",
+				"pricing_mode": "rules",
+				"version": "2026-11-01",
+				"calendars": ["holidays-fr"],
+				"inputs": [
+					{
+						"key": "weekday_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Weekday kWh price",
+							"fr": "Prix du kWh en semaine",
+							"de": "kWh-Preis werktags",
+							"es": "Precio del kWh entre semana"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.34286.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,34286.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,34286.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,34286."
+						},
+						"default": 0.34286,
+						"required": true
+					},
+					{
+						"key": "weekend_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Weekend and public holiday kWh price",
+							"fr": "Prix du kWh le week-end et les jours fériés",
+							"de": "kWh-Preis Wochenende und Feiertage",
+							"es": "Precio del kWh fines de semana y festivos"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25103.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25103.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25103.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25103."
+						},
+						"default": 0.25103,
+						"required": true
+					},
+					{
+						"key": "subscription",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "Monthly subscription (by subscribed power)",
+							"fr": "Abonnement mensuel (selon la puissance)",
+							"de": "Monatliche Grundgebühr (nach Anschlussleistung)",
+							"es": "Abono mensual (según la potencia contratada)"
+						},
+						"description": {
+							"en": "Pre-filled for 6 kVA. ÉS grid of 2026-11-01 in EUR/month including taxes: 3 kVA: 12.13 · 6: 15.86 · 9: 19.88 · 12: 23.76 · 15: 27.40 · 18: 31.14 · 24: 39.14 · 30: 46.47 · 36: 53.88.",
+							"fr": "Pré-rempli pour 6 kVA. Grille ÉS du 01/11/2026 en €/mois TTC : 3 kVA: 12,13 · 6: 15,86 · 9: 19,88 · 12: 23,76 · 15: 27,40 · 18: 31,14 · 24: 39,14 · 30: 46,47 · 36: 53,88.",
+							"de": "Vorbelegt für 6 kVA. ÉS-Tabelle vom 01/11/2026 in €/Monat brutto: 3 kVA: 12,13 · 6: 15,86 · 9: 19,88 · 12: 23,76 · 15: 27,40 · 18: 31,14 · 24: 39,14 · 30: 46,47 · 36: 53,88.",
+							"es": "Prerrellenado para 6 kVA. Tabla ÉS del 01/11/2026 en €/mes con impuestos: 3 kVA: 12,13 · 6: 15,86 · 9: 19,88 · 12: 23,76 · 15: 27,40 · 18: 31,14 · 24: 39,14 · 30: 46,47 · 36: 53,88."
+						},
+						"default": 15.86,
+						"required": true
+					},
+					{
+						"key": "regional_option",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "100% regional green electricity option",
+							"fr": "Option Électricité verte 100 % régionale",
+							"de": "Option Ökostrom 100 % regional",
+							"es": "Opción electricidad verde 100 % regional"
+						},
+						"description": {
+							"en": "Monthly amount including taxes added to the subscription. ÉS grid of 2026-11-01: 2.27.",
+							"fr": "Montant mensuel TTC ajouté à l'abonnement. Grille ÉS du 01/11/2026 : 2,27.",
+							"de": "Monatlicher Bruttobetrag zusätzlich zur Grundgebühr. ÉS-Tabelle vom 01/11/2026: 2,27.",
+							"es": "Importe mensual con impuestos añadido al abono. Tabla ÉS del 01/11/2026: 2,27."
+						},
+						"default": 2.27,
+						"required": true
+					}
+				],
+				"tariff": {
+					"tariff_version": 1,
+					"calendars": ["holidays-fr"],
+					"components": [
+						{
+							"key": "energy",
+							"kind": "consumption",
+							"rules": [
+								{ "label": "Jour férié", "when": { "calendar": { "holidays-fr": "holiday" } }, "price": "{{input:weekend_price}}" },
+								{ "label": "Week-end", "when": { "weekdays": ["sat", "sun"] }, "price": "{{input:weekend_price}}" }
+							],
+							"fallback": { "label": "Semaine", "price": "{{input:weekday_price}}" }
+						},
+						{ "key": "subscription", "kind": "fixed", "amount": "{{input:subscription}}", "per": "month" },
+						{
+							"key": "regional_option",
+							"kind": "fixed",
+							"label": "Option Électricité verte 100 % régionale",
+							"amount": "{{input:regional_option}}",
+							"per": "month"
+						}
+					]
+				}
+			},
+			{
+				"key": "es-verte-regionale-week-end-heures-creuses",
+				"name": {
+					"en": "ÉS 100% regional green 1 year – Weekend + Off-peak hours",
+					"fr": "ÉS Offre verte 100 % régionale 1 an – Week-end + Heures Creuses",
+					"de": "ÉS Ökostrom 100 % regional 1 Jahr – Wochenende + Nebenzeit",
+					"es": "ÉS Verde 100 % regional 1 año – Fin de semana + Horas valle"
+				},
+				"description": {
+					"en": "Reduced kWh price all weekend, on national public holidays (Good Friday and 26 December are ordinary days) and during the off-peak hours of your meter on weekdays. Linky meter required. ÉS market offer with electricity produced in the Grand Est region: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
+					"fr": "Prix du kWh réduit tout le week-end, les jours fériés nationaux (le Vendredi saint et le 26 décembre sont des jours ordinaires) et pendant les heures creuses de votre compteur en semaine. Compteur Linky requis. Offre de marché ÉS avec de l'électricité produite dans le Grand Est : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
+					"de": "Günstigerer kWh-Preis am ganzen Wochenende, an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage) und werktags während der Nebenzeit deines Zählers. Linky-Zähler erforderlich. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"es": "Precio del kWh reducido todo el fin de semana, los festivos nacionales (el Viernes Santo y el 26 de diciembre son días normales) y durante las horas valle de su contador entre semana. Requiere contador Linky. Oferta de mercado de ÉS con electricidad producida en la región Grand Est: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
+				},
+				"country": "FR",
+				"currency": "EUR",
+				"timezone": "Europe/Paris",
+				"pricing_mode": "rules",
+				"version": "2026-11-01",
+				"calendars": ["holidays-fr"],
+				"inputs": [
+					{
+						"key": "weekday_peak_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Weekday peak hours kWh price",
+							"fr": "Prix du kWh en semaine, heures pleines",
+							"de": "kWh-Preis werktags, Hauptzeit",
+							"es": "Precio del kWh entre semana, horas punta"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.35558.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,35558.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35558.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,35558."
+						},
+						"default": 0.35558,
+						"required": true
+					},
+					{
+						"key": "weekday_off_peak_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Weekday off-peak hours kWh price",
+							"fr": "Prix du kWh en semaine, heures creuses",
+							"de": "kWh-Preis werktags, Nebenzeit",
+							"es": "Precio del kWh entre semana, horas valle"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25993.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25993.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25993."
+						},
+						"default": 0.25993,
+						"required": true
+					},
+					{
+						"key": "weekend_price",
+						"type": "number",
+						"unit": "EUR/kWh",
+						"label": {
+							"en": "Weekend and public holiday kWh price",
+							"fr": "Prix du kWh le week-end et les jours fériés",
+							"de": "kWh-Preis Wochenende und Feiertage",
+							"es": "Precio del kWh fines de semana y festivos"
+						},
+						"description": {
+							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25993.",
+							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25993.",
+							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
+							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25993."
+						},
+						"default": 0.25993,
+						"required": true
+					},
+					{
+						"key": "off_peak_slots",
+						"type": "time_intervals",
+						"label": {
+							"en": "Off-peak hours of your meter",
+							"fr": "Heures creuses de votre compteur",
+							"de": "Nebenzeiten deines Zählers",
+							"es": "Horas valle de su contador"
+						},
+						"description": {
+							"en": "Set by Strasbourg Électricité Réseaux, 8 hours a day: see your bill, under \"option tarifaire\".",
+							"fr": "Fixées par Strasbourg Électricité Réseaux, 8 heures par jour : voir votre facture, rubrique « option tarifaire ».",
+							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe deine Rechnung unter „option tarifaire“.",
+							"es": "Fijadas por Strasbourg Électricité Réseaux, 8 horas al día: véase su factura, apartado «option tarifaire»."
+						},
+						"default": [["22:00", "06:00"]],
+						"required": true
+					},
+					{
+						"key": "subscription",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "Monthly subscription (by subscribed power)",
+							"fr": "Abonnement mensuel (selon la puissance)",
+							"de": "Monatliche Grundgebühr (nach Anschlussleistung)",
+							"es": "Abono mensual (según la potencia contratada)"
+						},
+						"description": {
+							"en": "Pre-filled for 6 kVA. ÉS grid of 2026-11-01 in EUR/month including taxes: 6 kVA: 16.05 · 9: 20.16 · 12: 24.13 · 15: 27.86 · 18: 31.70 · 24: 39.88 · 30: 47.40 · 36: 54.99.",
+							"fr": "Pré-rempli pour 6 kVA. Grille ÉS du 01/11/2026 en €/mois TTC : 6 kVA: 16,05 · 9: 20,16 · 12: 24,13 · 15: 27,86 · 18: 31,70 · 24: 39,88 · 30: 47,40 · 36: 54,99.",
+							"de": "Vorbelegt für 6 kVA. ÉS-Tabelle vom 01/11/2026 in €/Monat brutto: 6 kVA: 16,05 · 9: 20,16 · 12: 24,13 · 15: 27,86 · 18: 31,70 · 24: 39,88 · 30: 47,40 · 36: 54,99.",
+							"es": "Prerrellenado para 6 kVA. Tabla ÉS del 01/11/2026 en €/mes con impuestos: 6 kVA: 16,05 · 9: 20,16 · 12: 24,13 · 15: 27,86 · 18: 31,70 · 24: 39,88 · 30: 47,40 · 36: 54,99."
+						},
+						"default": 16.05,
+						"required": true
+					},
+					{
+						"key": "regional_option",
+						"type": "number",
+						"unit": "EUR/month",
+						"label": {
+							"en": "100% regional green electricity option",
+							"fr": "Option Électricité verte 100 % régionale",
+							"de": "Option Ökostrom 100 % regional",
+							"es": "Opción electricidad verde 100 % regional"
+						},
+						"description": {
+							"en": "Monthly amount including taxes added to the subscription. ÉS grid of 2026-11-01: 2.27.",
+							"fr": "Montant mensuel TTC ajouté à l'abonnement. Grille ÉS du 01/11/2026 : 2,27.",
+							"de": "Monatlicher Bruttobetrag zusätzlich zur Grundgebühr. ÉS-Tabelle vom 01/11/2026: 2,27.",
+							"es": "Importe mensual con impuestos añadido al abono. Tabla ÉS del 01/11/2026: 2,27."
+						},
+						"default": 2.27,
+						"required": true
+					}
+				],
+				"tariff": {
+					"tariff_version": 1,
+					"calendars": ["holidays-fr"],
+					"components": [
+						{
+							"key": "energy",
+							"kind": "consumption",
+							"rules": [
+								{ "label": "Jour férié", "when": { "calendar": { "holidays-fr": "holiday" } }, "price": "{{input:weekend_price}}" },
+								{ "label": "Week-end", "when": { "weekdays": ["sat", "sun"] }, "price": "{{input:weekend_price}}" },
+								{ "label": "Heures creuses", "when": { "time": "{{input:off_peak_slots}}" }, "price": "{{input:weekday_off_peak_price}}" }
+							],
+							"fallback": { "label": "Heures pleines", "price": "{{input:weekday_peak_price}}" }
+						},
+						{ "key": "subscription", "kind": "fixed", "amount": "{{input:subscription}}", "per": "month" },
+						{
+							"key": "regional_option",
+							"kind": "fixed",
+							"label": "Option Électricité verte 100 % régionale",
+							"amount": "{{input:regional_option}}",
+							"per": "month"
+						}
+					]
+				}
+			}
+		],
+		"calendars": [{ "key": "holidays-fr", "granularity": "day", "timezone": "Europe/Paris", "values": ["holiday"] }]
+	}
+}

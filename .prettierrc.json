@@ -1,0 +1,14 @@
+{
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "semi": true,
+  "tabWidth": 2,
+  "arrowParens": "always",
+  "overrides": [
+    {
+      "files": "gladys-assistant-integration.json",
+      "options": { "useTabs": true, "printWidth": 140 }
+    }
+  ]
+}
