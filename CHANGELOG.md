@@ -7,6 +7,8 @@ All notable changes to this integration are documented here. The format follows
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-18
+
 ### Changed
 
 - German texts use the formal "Sie" instead of "du", like the French and Spanish ones: the names,
@@ -25,5 +27,6 @@ already created keep working as they are.
 - French national public holidays published to the `holidays-fr` calendar for the Week-end options.
 - User documentation in English, French, German and Spanish.
 
-[Unreleased]: https://github.com/smuteau/gladys-electricite-de-strasbourg/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/smuteau/gladys-electricite-de-strasbourg/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/smuteau/gladys-electricite-de-strasbourg/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/smuteau/gladys-electricite-de-strasbourg/releases/tag/v0.1.0

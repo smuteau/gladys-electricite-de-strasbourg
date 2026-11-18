@@ -1,6 +1,6 @@
 {
   "name": "gladys-electricite-de-strasbourg",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Électricité de Strasbourg (ÉS) green fixed-price contract templates for Gladys Assistant: Base, Heures Creuses and Week-end options, with the French public holidays.",
   "type": "module",
