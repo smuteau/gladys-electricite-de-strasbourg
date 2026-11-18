@@ -7,6 +7,15 @@ All notable changes to this integration are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+
+- German texts use the formal "Sie" instead of "du", like the French and Spanish ones: the names,
+  descriptions and fields of the contract templates, the configuration page and the German
+  documentation.
+
+Nothing else changes: same template keys, same prices and same `holidays-fr` calendar, so the contracts
+already created keep working as they are.
+
 ## [0.1.0] - 2026-11-15
 
 ### Added

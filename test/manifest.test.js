@@ -75,10 +75,13 @@ test('the catalog description holds 10 to 100 characters per language', () => {
   }
 });
 
-test('German says "du", never the formal "Sie"', () => {
+test('German uses the formal "Sie", never "du", like the French "vous" and the Spanish "usted"', async () => {
+  const informal = /\b(du|Du|dein\w*|Dein\w*|dir|dich)\b/;
   for (const [path, text] of texts(manifest)) {
-    assert.doesNotMatch(text.de, /\b(Sie|Ihre?[mnrs]?)\b/, path);
+    assert.doesNotMatch(text.de, informal, path);
   }
+  const doc = await readFile(new URL('../docs/de.md', import.meta.url), 'utf8');
+  assert.doesNotMatch(doc, informal, 'docs/de.md');
 });
 
 test('the configuration page only explains: no setting, no secret, no action', () => {
