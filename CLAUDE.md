@@ -53,8 +53,9 @@ test/vendor/gladys-5.2.0/         unmodified pricing engine of Gladys, the tests
 - **ÉS facts**: Week-end = Saturday 0:00 to Sunday 24:00 plus national holidays; Good Friday and
   26 December are weekdays. Off-peak hours are set per meter by Strasbourg Électricité Réseaux. The
   100 % regional option is the same grid plus a monthly amount.
-- Texts exist in English, French, German (informal "du") and Spanish, `docs/{en,fr,de,es}.md` included
-  (same sections, ending with the legal notice). Rule labels are French.
+- Texts exist in English, French, German and Spanish, `docs/{en,fr,de,es}.md` included (same sections,
+  ending with the legal notice), always formal: "vous", "Sie", "usted" (maintainer's decision,
+  18/11/2026, a test guards the German). Rule labels are French.
 - **The cover shows the official ÉS logo**, at the maintainer's request: it belongs to ÉS, the legal
   notice of the docs and of the README says so. Keep both together.
 - Versions belong to the Release workflow; every user-visible change adds a line under

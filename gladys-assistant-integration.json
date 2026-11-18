@@ -24,7 +24,7 @@
 			"description": {
 				"en": "Nothing to set here. Open Integrations → Energy Monitoring → Contracts, create a contract and pick an « ÉS » template: green fixed-price offer or its 100% regional variant, with the Base, Off-peak hours or Week-end option. Gladys prices your consumption; this integration provides the templates and the French public holidays. The regulated Tarif Bleu is in the community catalogue of Gladys.",
 				"fr": "Rien à régler ici. Ouvrez Intégrations → Suivi de l'énergie → Contrats, créez un contrat et choisissez un modèle « ÉS » : offre verte à prix fixe ou sa variante 100 % régionale, en option Base, Heures Creuses ou Week-end. Gladys calcule le coût ; cette intégration fournit les modèles et les jours fériés. Le Tarif Bleu réglementé se trouve dans le catalogue communautaire de Gladys.",
-				"de": "Hier gibt es nichts einzustellen. Öffne Integrationen → Energieüberwachung → Verträge, lege einen Vertrag an und wähle eine „ÉS“-Vorlage: Ökostrom-Festpreisangebot oder seine 100 % regionale Variante, mit der Option Base, Nebenzeit oder Week-end. Gladys berechnet die Kosten; diese Integration liefert die Vorlagen und die Feiertage. Der regulierte Tarif Bleu steht im Community-Katalog von Gladys.",
+				"de": "Hier gibt es nichts einzustellen. Öffnen Sie Integrationen → Energieüberwachung → Verträge, legen Sie einen Vertrag an und wählen Sie eine „ÉS“-Vorlage: Ökostrom-Festpreisangebot oder seine 100 % regionale Variante, mit der Option Base, Nebenzeit oder Week-end. Gladys berechnet die Kosten; diese Integration liefert die Vorlagen und die Feiertage. Der regulierte Tarif Bleu steht im Community-Katalog von Gladys.",
 				"es": "Nada que configurar aquí. Abra Integraciones → Supervisión de energía → Contratos, cree un contrato y elija una plantilla «ÉS»: oferta verde a precio fijo o su variante 100 % regional, con la opción Base, Horas valle o Week-end. Gladys calcula el coste; esta integración aporta las plantillas y los festivos. El Tarif Bleu regulado está en el catálogo comunitario de Gladys."
 			},
 			"links": [
@@ -57,7 +57,7 @@
 				"description": {
 					"en": "One kWh price at any time. ÉS market offer: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
 					"fr": "Un seul prix du kWh à toute heure. Offre de marché ÉS : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
-					"de": "Ein kWh-Preis zu jeder Zeit. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"de": "Ein kWh-Preis zu jeder Zeit. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetzen Sie sie durch die Preise Ihres Vertrags.",
 					"es": "Un único precio del kWh a cualquier hora. Oferta de mercado de ÉS: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
 				},
 				"country": "FR",
@@ -74,7 +74,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.33164. For 9 to 36 kVA: 0.32906.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,33164. De 9 à 36 kVA : 0,32906.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,33164. Für 9 bis 36 kVA: 0,32906.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,33164. Für 9 bis 36 kVA: 0,32906.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,33164. De 9 a 36 kVA: 0,32906."
 						},
 						"default": 0.33164,
@@ -119,7 +119,7 @@
 				"description": {
 					"en": "Reduced kWh price during the 8 off-peak hours of your meter, every day. ÉS market offer: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
 					"fr": "Prix du kWh réduit pendant les 8 heures creuses de votre compteur, tous les jours. Offre de marché ÉS : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
-					"de": "Günstigerer kWh-Preis während der 8 Nebenzeitstunden deines Zählers, jeden Tag. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"de": "Günstigerer kWh-Preis während der 8 Nebenzeitstunden Ihres Zählers, jeden Tag. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetzen Sie sie durch die Preise Ihres Vertrags.",
 					"es": "Precio del kWh reducido durante las 8 horas valle de su contador, todos los días. Oferta de mercado de ÉS: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
 				},
 				"country": "FR",
@@ -141,7 +141,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.35512.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,35512.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35512.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35512.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,35512."
 						},
 						"default": 0.35512,
@@ -160,7 +160,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.26341.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,26341.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,26341.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,26341.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,26341."
 						},
 						"default": 0.26341,
@@ -172,13 +172,13 @@
 						"label": {
 							"en": "Off-peak hours of your meter",
 							"fr": "Heures creuses de votre compteur",
-							"de": "Nebenzeiten deines Zählers",
+							"de": "Nebenzeiten Ihres Zählers",
 							"es": "Horas valle de su contador"
 						},
 						"description": {
 							"en": "Set by Strasbourg Électricité Réseaux, 8 hours a day: see your bill, under \"option tarifaire\".",
 							"fr": "Fixées par Strasbourg Électricité Réseaux, 8 heures par jour : voir votre facture, rubrique « option tarifaire ».",
-							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe deine Rechnung unter „option tarifaire“.",
+							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe Ihre Rechnung unter „option tarifaire“.",
 							"es": "Fijadas por Strasbourg Électricité Réseaux, 8 horas al día: véase su factura, apartado «option tarifaire»."
 						},
 						"default": [["22:00", "06:00"]],
@@ -228,7 +228,7 @@
 				"description": {
 					"en": "Reduced kWh price all weekend and on national public holidays (Good Friday and 26 December are ordinary days). Linky meter required. ÉS market offer: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
 					"fr": "Prix du kWh réduit tout le week-end et les jours fériés nationaux (le Vendredi saint et le 26 décembre sont des jours ordinaires). Compteur Linky requis. Offre de marché ÉS : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
-					"de": "Günstigerer kWh-Preis am ganzen Wochenende und an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage). Linky-Zähler erforderlich. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"de": "Günstigerer kWh-Preis am ganzen Wochenende und an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage). Linky-Zähler erforderlich. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetzen Sie sie durch die Preise Ihres Vertrags.",
 					"es": "Precio del kWh reducido todo el fin de semana y los festivos nacionales (el Viernes Santo y el 26 de diciembre son días normales). Requiere contador Linky. Oferta de mercado de ÉS: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
 				},
 				"country": "FR",
@@ -251,7 +251,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.34286.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,34286.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,34286.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,34286.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,34286."
 						},
 						"default": 0.34286,
@@ -270,7 +270,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25103.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25103.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25103.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25103.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25103."
 						},
 						"default": 0.25103,
@@ -324,7 +324,7 @@
 				"description": {
 					"en": "Reduced kWh price all weekend, on national public holidays (Good Friday and 26 December are ordinary days) and during the off-peak hours of your meter on weekdays. Linky meter required. ÉS market offer: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
 					"fr": "Prix du kWh réduit tout le week-end, les jours fériés nationaux (le Vendredi saint et le 26 décembre sont des jours ordinaires) et pendant les heures creuses de votre compteur en semaine. Compteur Linky requis. Offre de marché ÉS : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
-					"de": "Günstigerer kWh-Preis am ganzen Wochenende, an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage) und werktags während der Nebenzeit deines Zählers. Linky-Zähler erforderlich. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"de": "Günstigerer kWh-Preis am ganzen Wochenende, an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage) und werktags während der Nebenzeit Ihres Zählers. Linky-Zähler erforderlich. Marktangebot von ÉS: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetzen Sie sie durch die Preise Ihres Vertrags.",
 					"es": "Precio del kWh reducido todo el fin de semana, los festivos nacionales (el Viernes Santo y el 26 de diciembre son días normales) y durante las horas valle de su contador entre semana. Requiere contador Linky. Oferta de mercado de ÉS: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
 				},
 				"country": "FR",
@@ -347,7 +347,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.35558.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,35558.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35558.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35558.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,35558."
 						},
 						"default": 0.35558,
@@ -366,7 +366,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25993.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25993.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25993."
 						},
 						"default": 0.25993,
@@ -385,7 +385,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25993.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25993.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25993."
 						},
 						"default": 0.25993,
@@ -397,13 +397,13 @@
 						"label": {
 							"en": "Off-peak hours of your meter",
 							"fr": "Heures creuses de votre compteur",
-							"de": "Nebenzeiten deines Zählers",
+							"de": "Nebenzeiten Ihres Zählers",
 							"es": "Horas valle de su contador"
 						},
 						"description": {
 							"en": "Set by Strasbourg Électricité Réseaux, 8 hours a day: see your bill, under \"option tarifaire\".",
 							"fr": "Fixées par Strasbourg Électricité Réseaux, 8 heures par jour : voir votre facture, rubrique « option tarifaire ».",
-							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe deine Rechnung unter „option tarifaire“.",
+							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe Ihre Rechnung unter „option tarifaire“.",
 							"es": "Fijadas por Strasbourg Électricité Réseaux, 8 horas al día: véase su factura, apartado «option tarifaire»."
 						},
 						"default": [["22:00", "06:00"]],
@@ -458,7 +458,7 @@
 				"description": {
 					"en": "One kWh price at any time. ÉS market offer with electricity produced in the Grand Est region: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
 					"fr": "Un seul prix du kWh à toute heure. Offre de marché ÉS avec de l'électricité produite dans le Grand Est : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
-					"de": "Ein kWh-Preis zu jeder Zeit. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"de": "Ein kWh-Preis zu jeder Zeit. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetzen Sie sie durch die Preise Ihres Vertrags.",
 					"es": "Un único precio del kWh a cualquier hora. Oferta de mercado de ÉS con electricidad producida en la región Grand Est: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
 				},
 				"country": "FR",
@@ -475,7 +475,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.33164. For 9 to 36 kVA: 0.32906.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,33164. De 9 à 36 kVA : 0,32906.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,33164. Für 9 bis 36 kVA: 0,32906.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,33164. Für 9 bis 36 kVA: 0,32906.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,33164. De 9 a 36 kVA: 0,32906."
 						},
 						"default": 0.33164,
@@ -546,7 +546,7 @@
 				"description": {
 					"en": "Reduced kWh price during the 8 off-peak hours of your meter, every day. ÉS market offer with electricity produced in the Grand Est region: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
 					"fr": "Prix du kWh réduit pendant les 8 heures creuses de votre compteur, tous les jours. Offre de marché ÉS avec de l'électricité produite dans le Grand Est : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
-					"de": "Günstigerer kWh-Preis während der 8 Nebenzeitstunden deines Zählers, jeden Tag. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"de": "Günstigerer kWh-Preis während der 8 Nebenzeitstunden Ihres Zählers, jeden Tag. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetzen Sie sie durch die Preise Ihres Vertrags.",
 					"es": "Precio del kWh reducido durante las 8 horas valle de su contador, todos los días. Oferta de mercado de ÉS con electricidad producida en la región Grand Est: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
 				},
 				"country": "FR",
@@ -568,7 +568,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.35512.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,35512.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35512.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35512.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,35512."
 						},
 						"default": 0.35512,
@@ -587,7 +587,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.26341.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,26341.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,26341.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,26341.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,26341."
 						},
 						"default": 0.26341,
@@ -599,13 +599,13 @@
 						"label": {
 							"en": "Off-peak hours of your meter",
 							"fr": "Heures creuses de votre compteur",
-							"de": "Nebenzeiten deines Zählers",
+							"de": "Nebenzeiten Ihres Zählers",
 							"es": "Horas valle de su contador"
 						},
 						"description": {
 							"en": "Set by Strasbourg Électricité Réseaux, 8 hours a day: see your bill, under \"option tarifaire\".",
 							"fr": "Fixées par Strasbourg Électricité Réseaux, 8 heures par jour : voir votre facture, rubrique « option tarifaire ».",
-							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe deine Rechnung unter „option tarifaire“.",
+							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe Ihre Rechnung unter „option tarifaire“.",
 							"es": "Fijadas por Strasbourg Électricité Réseaux, 8 horas al día: véase su factura, apartado «option tarifaire»."
 						},
 						"default": [["22:00", "06:00"]],
@@ -681,7 +681,7 @@
 				"description": {
 					"en": "Reduced kWh price all weekend and on national public holidays (Good Friday and 26 December are ordinary days). Linky meter required. ÉS market offer with electricity produced in the Grand Est region: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
 					"fr": "Prix du kWh réduit tout le week-end et les jours fériés nationaux (le Vendredi saint et le 26 décembre sont des jours ordinaires). Compteur Linky requis. Offre de marché ÉS avec de l'électricité produite dans le Grand Est : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
-					"de": "Günstigerer kWh-Preis am ganzen Wochenende und an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage). Linky-Zähler erforderlich. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"de": "Günstigerer kWh-Preis am ganzen Wochenende und an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage). Linky-Zähler erforderlich. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetzen Sie sie durch die Preise Ihres Vertrags.",
 					"es": "Precio del kWh reducido todo el fin de semana y los festivos nacionales (el Viernes Santo y el 26 de diciembre son días normales). Requiere contador Linky. Oferta de mercado de ÉS con electricidad producida en la región Grand Est: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
 				},
 				"country": "FR",
@@ -704,7 +704,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.34286.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,34286.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,34286.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,34286.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,34286."
 						},
 						"default": 0.34286,
@@ -723,7 +723,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25103.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25103.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25103.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25103.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25103."
 						},
 						"default": 0.25103,
@@ -803,7 +803,7 @@
 				"description": {
 					"en": "Reduced kWh price all weekend, on national public holidays (Good Friday and 26 December are ordinary days) and during the off-peak hours of your meter on weekdays. Linky meter required. ÉS market offer with electricity produced in the Grand Est region: prices fixed for 1 year from your signature. Pre-filled with the grid of 2026-11-01: replace them with the prices of your contract.",
 					"fr": "Prix du kWh réduit tout le week-end, les jours fériés nationaux (le Vendredi saint et le 26 décembre sont des jours ordinaires) et pendant les heures creuses de votre compteur en semaine. Compteur Linky requis. Offre de marché ÉS avec de l'électricité produite dans le Grand Est : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du 01/11/2026 : remplacez par les prix de votre contrat.",
-					"de": "Günstigerer kWh-Preis am ganzen Wochenende, an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage) und werktags während der Nebenzeit deines Zählers. Linky-Zähler erforderlich. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetze sie durch die Preise deines Vertrags.",
+					"de": "Günstigerer kWh-Preis am ganzen Wochenende, an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage) und werktags während der Nebenzeit Ihres Zählers. Linky-Zähler erforderlich. Marktangebot von ÉS mit Strom aus der Region Grand Est: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom 01/11/2026: ersetzen Sie sie durch die Preise Ihres Vertrags.",
 					"es": "Precio del kWh reducido todo el fin de semana, los festivos nacionales (el Viernes Santo y el 26 de diciembre son días normales) y durante las horas valle de su contador entre semana. Requiere contador Linky. Oferta de mercado de ÉS con electricidad producida en la región Grand Est: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del 01/11/2026: sustitúyalos por los precios de su contrato."
 				},
 				"country": "FR",
@@ -826,7 +826,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.35558.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,35558.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35558.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,35558.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,35558."
 						},
 						"default": 0.35558,
@@ -845,7 +845,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25993.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25993.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25993."
 						},
 						"default": 0.25993,
@@ -864,7 +864,7 @@
 						"description": {
 							"en": "Price including taxes of your contract. ÉS grid of 2026-11-01: 0.25993.",
 							"fr": "Prix TTC de votre contrat. Grille ÉS du 01/11/2026 : 0,25993.",
-							"de": "Bruttopreis deines Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
+							"de": "Bruttopreis Ihres Vertrags. ÉS-Tabelle vom 01/11/2026: 0,25993.",
 							"es": "Precio con impuestos de su contrato. Tabla ÉS del 01/11/2026: 0,25993."
 						},
 						"default": 0.25993,
@@ -876,13 +876,13 @@
 						"label": {
 							"en": "Off-peak hours of your meter",
 							"fr": "Heures creuses de votre compteur",
-							"de": "Nebenzeiten deines Zählers",
+							"de": "Nebenzeiten Ihres Zählers",
 							"es": "Horas valle de su contador"
 						},
 						"description": {
 							"en": "Set by Strasbourg Électricité Réseaux, 8 hours a day: see your bill, under \"option tarifaire\".",
 							"fr": "Fixées par Strasbourg Électricité Réseaux, 8 heures par jour : voir votre facture, rubrique « option tarifaire ».",
-							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe deine Rechnung unter „option tarifaire“.",
+							"de": "Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe Ihre Rechnung unter „option tarifaire“.",
 							"es": "Fijadas por Strasbourg Électricité Réseaux, 8 horas al día: véase su factura, apartado «option tarifaire»."
 						},
 						"default": [["22:00", "06:00"]],

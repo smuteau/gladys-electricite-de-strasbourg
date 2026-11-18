@@ -98,7 +98,7 @@ const OPTION_DESCRIPTIONS = {
   'peak-off-peak': {
     en: 'Reduced kWh price during the 8 off-peak hours of your meter, every day.',
     fr: 'Prix du kWh réduit pendant les 8 heures creuses de votre compteur, tous les jours.',
-    de: 'Günstigerer kWh-Preis während der 8 Nebenzeitstunden deines Zählers, jeden Tag.',
+    de: 'Günstigerer kWh-Preis während der 8 Nebenzeitstunden Ihres Zählers, jeden Tag.',
     es: 'Precio del kWh reducido durante las 8 horas valle de su contador, todos los días.',
   },
   weekend: {
@@ -110,7 +110,7 @@ const OPTION_DESCRIPTIONS = {
   'weekend-peak-off-peak': {
     en: 'Reduced kWh price all weekend, on national public holidays (Good Friday and 26 December are ordinary days) and during the off-peak hours of your meter on weekdays. Linky meter required.',
     fr: 'Prix du kWh réduit tout le week-end, les jours fériés nationaux (le Vendredi saint et le 26 décembre sont des jours ordinaires) et pendant les heures creuses de votre compteur en semaine. Compteur Linky requis.',
-    de: 'Günstigerer kWh-Preis am ganzen Wochenende, an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage) und werktags während der Nebenzeit deines Zählers. Linky-Zähler erforderlich.',
+    de: 'Günstigerer kWh-Preis am ganzen Wochenende, an landesweiten Feiertagen (Karfreitag und 26. Dezember sind normale Tage) und werktags während der Nebenzeit Ihres Zählers. Linky-Zähler erforderlich.',
     es: 'Precio del kWh reducido todo el fin de semana, los festivos nacionales (el Viernes Santo y el 26 de diciembre son días normales) y durante las horas valle de su contador entre semana. Requiere contador Linky.',
   },
 };
@@ -136,7 +136,7 @@ function familyDescription(regional, grid) {
   return {
     en: `ÉS market offer${regional ? ' with electricity produced in the Grand Est region' : ''}: prices fixed for 1 year from your signature. Pre-filled with the grid of ${grid}: replace them with the prices of your contract.`,
     fr: `Offre de marché ÉS${regional ? " avec de l'électricité produite dans le Grand Est" : ''} : prix fixes 1 an à partir de votre souscription. Pré-rempli avec la grille du ${frDate(grid)} : remplacez par les prix de votre contrat.`,
-    de: `Marktangebot von ÉS${regional ? ' mit Strom aus der Region Grand Est' : ''}: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom ${frDate(grid)}: ersetze sie durch die Preise deines Vertrags.`,
+    de: `Marktangebot von ÉS${regional ? ' mit Strom aus der Region Grand Est' : ''}: Preise 1 Jahr fest ab Vertragsabschluss. Vorbelegt mit der Tabelle vom ${frDate(grid)}: ersetzen Sie sie durch die Preise Ihres Vertrags.`,
     es: `Oferta de mercado de ÉS${regional ? ' con electricidad producida en la región Grand Est' : ''}: precios fijos 1 año desde su contratación. Prerrellenado con la tabla del ${frDate(grid)}: sustitúyalos por los precios de su contrato.`,
   };
 }
@@ -174,13 +174,13 @@ const OFF_PEAK_SLOTS_INPUT = {
   label: {
     en: 'Off-peak hours of your meter',
     fr: 'Heures creuses de votre compteur',
-    de: 'Nebenzeiten deines Zählers',
+    de: 'Nebenzeiten Ihres Zählers',
     es: 'Horas valle de su contador',
   },
   description: {
     en: 'Set by Strasbourg Électricité Réseaux, 8 hours a day: see your bill, under "option tarifaire".',
     fr: 'Fixées par Strasbourg Électricité Réseaux, 8 heures par jour : voir votre facture, rubrique « option tarifaire ».',
-    de: 'Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe deine Rechnung unter „option tarifaire“.',
+    de: 'Von Strasbourg Électricité Réseaux festgelegt, 8 Stunden pro Tag: siehe Ihre Rechnung unter „option tarifaire“.',
     es: 'Fijadas por Strasbourg Électricité Réseaux, 8 horas al día: véase su factura, apartado «option tarifaire».',
   },
   default: DEFAULT_OFF_PEAK_SLOTS,
@@ -197,7 +197,7 @@ function priceInput(key, value, grid, note) {
     description: {
       en: `Price including taxes of your contract. ÉS grid of ${grid}: ${kwh(value, false)}.${suffix('en')}`,
       fr: `Prix TTC de votre contrat. Grille ÉS du ${frDate(grid)} : ${kwh(value, true)}.${suffix('fr')}`,
-      de: `Bruttopreis deines Vertrags. ÉS-Tabelle vom ${frDate(grid)}: ${kwh(value, true)}.${suffix('de')}`,
+      de: `Bruttopreis Ihres Vertrags. ÉS-Tabelle vom ${frDate(grid)}: ${kwh(value, true)}.${suffix('de')}`,
       es: `Precio con impuestos de su contrato. Tabla ÉS del ${frDate(grid)}: ${kwh(value, true)}.${suffix('es')}`,
     },
     default: value,
